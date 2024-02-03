@@ -9,14 +9,12 @@
     android:layout_weight="1"
     android:layout_gravity="fill"
     tools:context=".MainActivity">
-
     <TextView
         android:id="@+id/textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/txtView_message"
-        android:textSize="30dp"
-         />
+        android:textSize="30dp"/>
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -26,14 +24,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/switch_message"></Switch>
-
-
     <Button
         android:id="@+id/btnPressMe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btn_pressMe"
-         />
+        android:text="@string/btn_pressMe"/>
     <CheckBox
         android:id="@+id/checkBox"
         android:layout_width="wrap_content"
@@ -46,5 +41,4 @@
         android:layout_height="wrap_content"
         android:hint="@string/txtView_message"
         android:layout_columnSpan="2"/>
-
 </GridLayout>
