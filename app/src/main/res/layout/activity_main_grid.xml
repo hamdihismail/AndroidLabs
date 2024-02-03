@@ -37,6 +37,7 @@
         android:layout_marginLeft="90dp"></CheckBox>
     <EditText
         android:id="@+id/edtText"
+        android:inputType="text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/txtView_message"
