@@ -36,9 +36,9 @@ public class MainActivity extends AppCompatActivity {
         checkBox.setOnCheckedChangeListener((cb, isChecked) -> {
             String onOff;
             if(isChecked){
-                onOff = on;
+                onOff = " " + on;
             } else {
-                onOff = off;
+                onOff = " " + off;
             }
             Snackbar.make(checkBox, snackBar_message + onOff, Snackbar.LENGTH_LONG)
                 .setAction( "Undo", click -> cb.setChecked(!isChecked))
