@@ -6,4 +6,8 @@
     <string name="snackBar_message">The checkbox is now </string>
     <string name="on">on</string>
     <string name="off">off</string>
+    <string name="txtView_message">I love Android</string>
+    <string name="switch_message">Switch on/off</string>
+    <string name="btn_pressMe">PRESS ME</string>
+    <string name="checkBox_text">Check this out!</string>
 </resources>

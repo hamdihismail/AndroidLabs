@@ -10,7 +10,7 @@
         android:id="@+id/textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="I love Android"
+        android:text="@string/txtView_message"
         android:textSize="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/textview"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:text="Switch on/off"></Switch>
+        android:text="@string/switch_message"></Switch>
     <ImageButton
         android:id="@+id/flag"
         android:layout_width="wrap_content"
@@ -33,14 +33,14 @@
         android:id="@+id/btnPressMe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="PRESS ME"
+        android:text="@string/btn_pressMe"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/flag"/>
     <CheckBox
         android:id="@+id/checkBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Check this out!"
+        android:text="@string/checkBox_text"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/flag"
         android:layout_marginRight="10dp"></CheckBox>
@@ -48,7 +48,7 @@
         android:id="@+id/edtText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="I love Android"
+        android:hint="@string/txtView_message"
         android:layout_columnSpan="2"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnPressMe"/>

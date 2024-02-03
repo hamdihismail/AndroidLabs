@@ -20,13 +20,13 @@
         android:id="@+id/textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="I love Android"
+        android:text="@string/txtView_message"
         android:textSize="30dp" />
 
     <Switch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Switch on/off"></Switch></LinearLayout>
+        android:text="@string/switch_message"></Switch></LinearLayout>
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -39,17 +39,17 @@
         android:id="@+id/btnPressMe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="PRESS ME"/>
+        android:text="@string/btn_pressMe"/>
     <CheckBox
         android:id="@+id/checkBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Check this out!"
+        android:text="@string/checkBox_text"
         android:layout_marginLeft="400px"></CheckBox></LinearLayout>
     <EditText
         android:id="@+id/edtText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="I love Android"/>
+        android:hint="@string/txtView_message"/>
 
 </LinearLayout>
