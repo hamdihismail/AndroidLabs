@@ -19,11 +19,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/flag"
-        android:layout_rowSpan="2"/>
+        android:layout_rowSpan="2"
+        android:contentDescription="flag" />
     <Switch
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/switch_message"></Switch>
+        android:layout_height="48dp"
+        android:text="@string/switch_message"/>
     <Button
         android:id="@+id/btnPressMe"
         android:layout_width="wrap_content"
@@ -34,12 +35,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/checkBox_text"
-        android:layout_marginLeft="90dp"></CheckBox>
+        android:layout_marginLeft="90dp"/>
     <EditText
         android:id="@+id/edtText"
         android:inputType="text"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:hint="@string/txtView_message"
         android:layout_columnSpan="2"/>
 </GridLayout>

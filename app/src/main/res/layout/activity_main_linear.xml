@@ -22,12 +22,14 @@
         android:textSize="30dp" />
     <Switch
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/switch_message"></Switch></LinearLayout>
+        android:layout_height="48dp"
+        android:text="@string/switch_message"
+        tools:ignore="UseSwitchCompatOrMaterialXml" /></LinearLayout>
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/flag" /></LinearLayout>
+        android:src="@drawable/flag"
+        android:contentDescription="Flag" /></LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -41,11 +43,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/checkBox_text"
-        android:layout_marginLeft="400px"></CheckBox></LinearLayout>
+        android:layout_marginLeft="160dp"/></LinearLayout>
     <EditText
         android:id="@+id/edtText"
         android:inputType="text"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:hint="@string/txtView_message"/>
 </LinearLayout>
