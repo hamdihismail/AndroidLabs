@@ -11,4 +11,9 @@
     <string name="switch_message">Allumer/éteindre</string>
     <string name="btn_pressMe">APPUYEZ-MOI</string>
     <string name="checkBox_text">Regarde ça!</string>
+    <string name="txtView_main">Enter your name</string>
+    <string name="txtView_name">Welcome!</string>
+    <string name="btn_next">NEXT</string>
+    <string name="btn_negative">DON\'T CALL ME THAT</string>
+    <string name="btn_positive">THANK YOU</string>
 </resources>

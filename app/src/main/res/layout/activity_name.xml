@@ -4,29 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".NameActivity">
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txtView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:text="@string/txtView_main"
-        android:layout_margin="5dp"
-        android:textSize="18dp"/>
-    <EditText
-        android:id="@+id/edtText"
-        android:layout_width="225dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/textView"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="5dp"/>
+        android:text="@string/txtView_name"
+        android:layout_margin="5dp"/>
     <Button
-        android:id="@+id/btnNext"
+        android:id="@+id/btnNegative"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/edtText"
+        app:layout_constraintTop_toBottomOf="@id/txtView"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginLeft="5dp"
-        android:text="@string/btn_next"/>
+        android:text="@string/btn_negative"/>
+    <Button
+        android:id="@+id/btnPositive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txtView"
+        app:layout_constraintLeft_toRightOf="@id/btnNegative"
+        android:layout_marginLeft="10dp"
+        android:text="@string/btn_positive"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
