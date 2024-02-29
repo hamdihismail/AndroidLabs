@@ -4,29 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-    <TextView
-        android:id="@+id/textView"
+    tools:context=".MainActivity"
+    android:background="@color/black">
+
+    <ImageView
+        android:id="@+id/imgView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars"/>
+    <ProgressBar
+        android:id="@+id/pBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:text="@string/txtView_main"
-        android:layout_margin="5dp"
-        android:textSize="18dp"/>
-    <EditText
-        android:id="@+id/edtText"
-        android:layout_width="225dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/textView"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="5dp"/>
-    <Button
-        android:id="@+id/btnNext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/edtText"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="5dp"
-        android:text="@string/btn_next"/>
+        app:layout_constraintTop_toBottomOf="parent"/>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
