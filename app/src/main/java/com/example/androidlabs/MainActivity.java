@@ -8,6 +8,9 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.ImageView;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -92,14 +95,21 @@ public class MainActivity extends AppCompatActivity {
                 while((line = reader.readLine()) != null){
                     buffer.append(line);
                 }
+                String finalJson = buffer.toString();
 
-                return buffer.toString();
+                JSONObject parentObject = new JSONObject(finalJson);
+                String id = parentObject.get("_id").toString();
+                return id;
+
+//                return buffer.toString();
 
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }catch (IOException e) {
                 e.printStackTrace();
-            }finally {
+            } catch (JSONException e) {
+                e.printStackTrace();
+            } finally {
                 if(connection != null){
                     connection.disconnect();
                 }
