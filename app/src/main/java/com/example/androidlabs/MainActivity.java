@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
     private ProgressBar pBar;
     private Bitmap bitmap;
     //Create Path to save Image
-//    private File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES+ "/AndroidDvlpr"); //Creates app specific folder
     private File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES+"/CatImages");
 
 
@@ -48,56 +47,9 @@ public class MainActivity extends AppCompatActivity {
             path.mkdirs();
         }
 
-//        HttpURLConnection connection = null;
-//        BufferedReader reader = null;
-
         new CatImages().execute("https://cataas.com/cat?json=true");
-
-
-//        try {
-//            URL url = new URL("https://cataas.com/cat?json=true");
-//            connection = (HttpURLConnection) url.openConnection();
-//            connection.connect();
-//
-//            InputStream stream = connection.getInputStream();
-//
-//
-//            reader = new BufferedReader(new InputStreamReader(stream));
-//            StringBuffer buffer = new StringBuffer();
-//
-//            String line = "";
-//            while((line = reader.readLine()) != null){
-//                buffer.append(line);
-//            }
-//            System.out.println(buffer.toString());
-//
-//        } catch (MalformedURLException e) {
-//            e.printStackTrace();
-//        }catch (IOException e) {
-//            e.printStackTrace();
-//        }finally {
-//            if(connection != null){
-//                connection.disconnect();
-//            }
-//            try {
-//                if(reader != null){
-//                    reader.close();
-//                }
-//            }catch (IOException e){
-//                e.printStackTrace();
-//            }
-//        }
-
-//        InputStream is = getResources().openRawResource(+R.drawable.test);
-//        File test = new File("/sdcard/Pictures/CatImages/1Y3dpssxcbHPEkfO.png");
-//        if(test.exists()){
-//            System.out.println("Test File Exists!!!");
-//        }
-//        bitmap = BitmapFactory.decodeFile(test.toString());
         imageView = findViewById(R.id.imgView);
         pBar = findViewById(R.id.pBar);
-//
-//        imageView.setImageBitmap(bitmap);
     }
 
     public class CatImages extends AsyncTask<String, Integer, String>{
@@ -128,7 +80,6 @@ public class MainActivity extends AppCompatActivity {
 
                     JSONObject parentObject = new JSONObject(finalJson);
                     String id = parentObject.get("_id").toString();
-//                    Path oldFile = Paths.get(id + ".png");
                     File oldFile = new File(Environment.getExternalStorageDirectory().getPath(),"/Pictures/CatImages/"+id+".png");
 
                     if (oldFile.exists()) {
@@ -165,10 +116,6 @@ public class MainActivity extends AppCompatActivity {
 
                     }
 
-//                    return id;
-
-//                return buffer.toString();
-
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 } catch (IOException e) {
@@ -187,14 +134,12 @@ public class MainActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
                 }
-//                return null;
             }
         }
 
         @Override
         protected void onProgressUpdate(Integer... values) {
             super.onProgressUpdate(values);
-//            imageView = findViewById(R.id.imgView);
             bitmap = BitmapFactory.decodeFile(newImgFile.toString());
             imageView.setImageBitmap(bitmap);
             pBar.setProgress(values[0]);
@@ -202,7 +147,6 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String result){
-//            imageView = findViewById(R.id.imgView);
             super.onPostExecute(result);
             System.out.println(result);
         }
