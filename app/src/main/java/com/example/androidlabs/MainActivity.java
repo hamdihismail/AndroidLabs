@@ -10,6 +10,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -30,6 +31,7 @@ import java.nio.file.Paths;
 public class MainActivity extends AppCompatActivity {
 
     private ImageView imageView;
+    private ProgressBar pBar;
     private Bitmap bitmap;
     //Create Path to save Image
 //    private File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES+ "/AndroidDvlpr"); //Creates app specific folder
@@ -92,7 +94,8 @@ public class MainActivity extends AppCompatActivity {
 //            System.out.println("Test File Exists!!!");
 //        }
 //        bitmap = BitmapFactory.decodeFile(test.toString());
-//        imageView = findViewById(R.id.imgView);
+        imageView = findViewById(R.id.imgView);
+        pBar = findViewById(R.id.pBar);
 //
 //        imageView.setImageBitmap(bitmap);
     }
@@ -126,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
                     JSONObject parentObject = new JSONObject(finalJson);
                     String id = parentObject.get("_id").toString();
 //                    Path oldFile = Paths.get(id + ".png");
-                    File oldFile = new File("/sdcard/Pictures/CatImages/"+id+".png");
+                    File oldFile = new File(Environment.getExternalStorageDirectory().getPath(),"/Pictures/CatImages/"+id+".png");
 
                     if (oldFile.exists()) {
                         System.out.println("The file exists!!");
@@ -141,7 +144,6 @@ public class MainActivity extends AppCompatActivity {
                         bitmap.compress(Bitmap.CompressFormat.PNG, 100, out); // Compress Image
                         out.flush();
                         out.close();
-
                         System.out.println("FIle Saved!!");
                         System.out.println("Path: " + path.toString());
                         MediaScannerConnection.scanFile(MainActivity.this, new String[]{imageFile.getAbsolutePath()}, null, new MediaScannerConnection.OnScanCompletedListener() {
@@ -163,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
 
                     }
 
-                    return id;
+//                    return id;
 
 //                return buffer.toString();
 
@@ -185,20 +187,22 @@ public class MainActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
                 }
-                return null;
+//                return null;
             }
         }
 
         @Override
         protected void onProgressUpdate(Integer... values) {
             super.onProgressUpdate(values);
-            bitmap = BitmapFactory.decodeFile(newImgFile);
+//            imageView = findViewById(R.id.imgView);
+            bitmap = BitmapFactory.decodeFile(newImgFile.toString());
             imageView.setImageBitmap(bitmap);
+            pBar.setProgress(values[0]);
         }
 
         @Override
         protected void onPostExecute(String result){
-            imageView = findViewById(R.id.imgView);
+//            imageView = findViewById(R.id.imgView);
             super.onPostExecute(result);
             System.out.println(result);
         }
