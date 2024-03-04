@@ -6,27 +6,40 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Environment;
 import android.widget.ImageView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class MainActivity extends AppCompatActivity {
 
     private ImageView imageView;
     private Bitmap bitmap;
+    //Create Path to save Image
+    private File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES+ "/AndroidDvlpr"); //Creates app specific folder
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if(!path.exists()) {
+            path.mkdirs();
+        }
 
 //        HttpURLConnection connection = null;
 //        BufferedReader reader = null;
@@ -99,6 +112,12 @@ public class MainActivity extends AppCompatActivity {
 
                 JSONObject parentObject = new JSONObject(finalJson);
                 String id = parentObject.get("_id").toString();
+                Path oldFile = Paths.get(id+".png");
+
+                if (Files.exists(oldFile)){
+                    System.out.println("The file exists!!");
+                }
+
                 return id;
 
 //                return buffer.toString();
