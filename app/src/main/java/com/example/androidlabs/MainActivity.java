@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 //        HttpURLConnection connection = null;
 //        BufferedReader reader = null;
 
-//        new CatImages().execute("https://cataas.com/cat?json=true");
+        new CatImages().execute("https://cataas.com/cat?json=true");
 
 
 //        try {
@@ -87,14 +87,14 @@ public class MainActivity extends AppCompatActivity {
 //        }
 
 //        InputStream is = getResources().openRawResource(+R.drawable.test);
-        File test = new File("/sdcard/Pictures/CatImages/1Y3dpssxcbHPEkfO.png");
-        if(test.exists()){
-            System.out.println("Test File Exists!!!");
-        }
-        bitmap = BitmapFactory.decodeFile(test.toString());
-        imageView = findViewById(R.id.imgView);
-
-        imageView.setImageBitmap(bitmap);
+//        File test = new File("/sdcard/Pictures/CatImages/1Y3dpssxcbHPEkfO.png");
+//        if(test.exists()){
+//            System.out.println("Test File Exists!!!");
+//        }
+//        bitmap = BitmapFactory.decodeFile(test.toString());
+//        imageView = findViewById(R.id.imgView);
+//
+//        imageView.setImageBitmap(bitmap);
     }
 
     public class CatImages extends AsyncTask<String, Integer, String>{
